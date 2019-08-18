@@ -29,7 +29,7 @@ public class CamelResource extends RouteBuilder {
 //                .endRest();
 
         rest().get("Orders")
-                .produces(MediaType.APPLICATION_JSON_VALUE).outType(List.class)
+                .produces(MediaType.APPLICATION_JSON_VALUE).outType(Order[].class)
                 .route()
                 .id("get-orders")
                 .process(processor).endRest();
