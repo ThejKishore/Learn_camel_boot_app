@@ -1,0 +1,27 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group = 'com.learning.camel'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+ext{
+    set("camelVersion","2.24.0")
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.apache.camel:camel-spring-boot-starter:${camelVersion}"
+    implementation "org.apache.camel:camel-servlet-starter:${camelVersion}"
+    implementation "org.apache.camel:camel-jackson:${camelVersion}"
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
